@@ -1,0 +1,24 @@
+{
+  "packageDirectories": [
+    {
+      "path": "batch-framework-app",
+      "default": false,
+      "package": "batch-framework-app",
+      "versionName": "ver 1.0",
+      "versionNumber": "1.0.0.NEXT",
+      "versionDescription": "Batch framework isolated package"
+    },
+    {
+      "path": "force-app",
+      "default": true
+    }
+  ],
+  "name": "MyProject",
+  "namespace": "",
+  "sfdcLoginUrl": "https://login.salesforce.com",
+  "sourceApiVersion": "66.0",
+  "packageAliases": {
+    "batch-framework-app": "0HoJv00000000eLKAQ",
+    "batch-framework-app@1.0.0-4": "04tJv000000bzirIAA"
+  }
+}
