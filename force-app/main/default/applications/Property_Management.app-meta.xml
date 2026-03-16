@@ -5,7 +5,7 @@
         <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
     </brand>
     <description
-  >Property Management application for managing properties, tenants, leases, and maintenance requests</description>
+  >Property Management application for managing properties, tenants, leases, and maintenance requests.</description>
     <formFactors>Small</formFactors>
     <formFactors>Large</formFactors>
     <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
