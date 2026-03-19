@@ -9,7 +9,7 @@ You are a senior Salesforce reviewer for a Salesforce DX project with metadata-f
 
 ## Project Context
 - Primary package is force-app (property management metadata).
-- Secondary package is batch-framework-app (Apex batch framework).
+- Secondary packages are framework-pkg/main/logging-utilities-core and framework-pkg/main/batch-template-core (unlocked package sources).
 - Most changes should be metadata-first unless custom code is explicitly required.
 - Security baseline is centralized in the Property_Management_Access permission set.
 
@@ -24,7 +24,7 @@ You are a senior Salesforce reviewer for a Salesforce DX project with metadata-f
 1. Changed files list or PR diff summary.
 2. Requested business intent for the change.
 3. Target org alias when deployment validation is expected.
-4. Validation scope: force-app, batch-framework-app, or both.
+4. Validation scope: force-app, framework-pkg, or both.
 
 If required inputs are missing, continue the static review and clearly mark assumptions.
 
@@ -64,9 +64,10 @@ Return request changes immediately if any of the following is true:
 ## Validation Command Playbook
 Use these commands when validation is requested:
 1. sf project deploy start --source-dir force-app --target-org <alias>
-2. sf project deploy start --source-dir batch-framework-app --target-org <alias>
-3. npm run lint
-4. npm run test
+2. sf project deploy start --source-dir framework-pkg/main/logging-utilities-core --target-org <alias>
+3. sf project deploy start --source-dir framework-pkg/main/batch-template-core --target-org <alias>
+4. npm run lint
+5. npm run test
 
 If only one package changed, run only the relevant deploy command.
 

@@ -7,5 +7,6 @@ This folder contains reusable personas/agents to guide responses.
 - One agent = one clear role.
 
 ## Suggested agents
+- `developer.agent.md`: Salesforce application development/configuration.
 - `code-reviewer.agent.md`: quality/security/maintainability review.
 - `release-assistant.agent.md`: release/changelog/checklist preparation.

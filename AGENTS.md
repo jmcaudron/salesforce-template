@@ -1,6 +1,9 @@
 # Agent guide: SFDX project 
 
-This project is a **Salesforce DX (SFDX) project**. The structure is generated; the project lives under `force-app/main/default/`. Use this file when working in this directory.
+This project is a **Salesforce DX (SFDX) project** with two delivery models:
+- `force-app` for standard metadata.
+- `framework-pkg/main/*` for unlocked package sources.
+Use this file when working in this directory.
 
 ## Project layout
 
@@ -8,7 +11,7 @@ This project is a **Salesforce DX (SFDX) project**. The structure is generated; 
 
 Path convention: **applications** (lowercase).
 
-## One package.json contexts
+## One package.json context
 
 ### 1. Project root (this directory)
 
@@ -21,11 +24,9 @@ Used for SFDX metadata (LWC, Aura, etc.). Scripts here are for the base SFDX tem
 | `npm run prettier` | Format supported metadata files |
 | `npm run prettier:verify` | Check Prettier |
 
-Root **does not** run the React app. The root `npm run build` is a no-op for the base SFDX project.
+**Before finishing changes:** run `npm run lint` and `npm run test` from the project root when relevant.
 
-**Before finishing changes:** run `npm run build` and `npm run lint` from the web app directory; both must succeed.
-
-## Agent rules (.github/instructions)
+## Agent rules (.github/copilot-instructions)
 
 This project includes **.github/instructions/** at the project root. Follow them when generating or editing code.
 
@@ -34,8 +35,12 @@ This project includes **.github/instructions/** at the project root. Follow them
 From **this project root**:
 
 ```bash
-# Deploy all metadata
-sf project deploy start --source-dir force-app --target-org <alias>
+# Standard metadata (force-app)
+sf project deploy start --manifest manifest/force-app-package.xml --target-org <alias>
+
+# Unlocked package sources (framework-pkg): use package lifecycle
+sf package version create --package `package-name` --target-dev-hub <devhub> --wait 60 --code-coverage
+sf package install --package <04t...> --target-org <alias> --wait 30 --publish-wait 10
 ```
 
 ## Conventions (quick reference)

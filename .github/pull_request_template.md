@@ -8,7 +8,8 @@
 
 - Package scope:
   - [ ] force-app
-  - [ ] batch-framework-app
+  - [ ] framework-pkg/main/logging-utilities-core
+  - [ ] framework-pkg/main/batch-template-core
   - [ ] both
 - Changed areas:
   - [ ] Custom Objects / Fields
@@ -31,7 +32,7 @@
 - PR diff / changed files summary: <!-- link or paste -->
 - Requested business intent: <!-- concise statement -->
 - Target org alias for validation: <!-- e.g. dev-sandbox or N/A -->
-- Validation scope: <!-- force-app | batch-framework-app | both -->
+- Validation scope: <!-- force-app | framework-pkg | both -->
 
 ## Salesforce Metadata Consistency (required when metadata changes)
 
@@ -52,12 +53,23 @@
 
 Paste command and result summary (success/failure + key output):
 
-1. `sf project deploy start --source-dir force-app --target-org <alias>`
-2. `sf project deploy start --source-dir batch-framework-app --target-org <alias>`
-3. `npm run lint`
-4. `npm run test`
+Standard metadata (force-app):
 
-If only one package changed, include only the relevant deploy command.
+1. `sf project deploy start --manifest manifest/force-app-package.xml --target-org <alias>`
+2. `sf project retrieve start --manifest manifest/force-app-package.xml --target-org <alias>` (optional sanity check)
+
+Unlocked package source (framework-pkg):
+
+3. `sf package version create --package logging-utilities-core --target-dev-hub <devhub> --wait 60 --code-coverage`
+4. `sf package version create --package batch-template-core --target-dev-hub <devhub> --wait 60 --code-coverage`
+5. `sf package install --package <04t...> --target-org <alias> --wait 30 --publish-wait 10`
+
+Global checks:
+
+6. `npm run lint`
+7. `npm run test`
+
+If only one package changed, include only the relevant commands.
 If validation was not run, explain why.
 
 ## Risks and Rollback (required)
