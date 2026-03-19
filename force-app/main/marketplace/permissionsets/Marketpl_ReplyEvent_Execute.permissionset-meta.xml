@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Permission set granting publish access to MarketplaceConversationReply platform events and publisher Apex class.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Marketplace Reply Event Execute</label>
+    <classAccesses>
+        <apexClass>MktConvReplyEventPub</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>false</allowDelete>
+        <allowEdit>false</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>false</modifyAllRecords>
+        <object>MarketplaceConversationReply__e</object>
+        <viewAllRecords>false</viewAllRecords>
+    </objectPermissions>
+</PermissionSet>

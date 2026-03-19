@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Marketplace__c</fullName>
+    <description>Marketplace where the conversation originates (Amazon, Allegro, etc.)</description>
+    <externalId>false</externalId>
+    <label>Marketplace</label>
+    <length>50</length>
+    <type>Text</type>
+</CustomField>
