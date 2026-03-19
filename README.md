@@ -2,6 +2,18 @@
 
 Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
 
+## Project Deployment Model
+
+This repository uses two distinct deployment models:
+
+- Standard metadata for `force-app`.
+- Unlocked package lifecycle for `framework-pkg/main/logging-utilities-core` and `framework-pkg/main/batch-template-core`.
+
+Deployment runbook:
+
+- `docs/deployment-mode-operatoire.md`
+- `manifest/README.md`
+
 ## How Do You Plan to Deploy Your Changes?
 
 Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).

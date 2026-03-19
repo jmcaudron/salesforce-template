@@ -1,24 +1,44 @@
 {
   "packageDirectories": [
     {
-      "path": "batch-framework-app",
+      "path": "framework-pkg/main/logging-utilities-core",
       "default": false,
-      "package": "batch-framework-app",
+      "package": "logging-utilities-core",
       "versionName": "ver 1.0",
       "versionNumber": "1.0.0.NEXT",
-      "versionDescription": "Batch framework isolated package"
+      "versionDescription": "Logging Utilities Core package"
+    },
+    {
+      "path": "framework-pkg/main/batch-template-core",
+      "default": false,
+      "package": "batch-template-core",
+      "versionName": "ver 1.0",
+      "versionNumber": "1.0.0.NEXT",
+      "versionDescription": "Batch Template Core package",
+      "dependencies": [
+        {
+          "package": "logging-utilities-core",
+          "versionNumber": "1.0.0.LATEST"
+        }
+      ]
     },
     {
       "path": "force-app",
       "default": true
+    },
+    {
+      "path": "force-app/main/marketplace",
+      "default": false
     }
   ],
-  "name": "MyProject",
+  "name": "Template Project Experimental",
   "namespace": "",
   "sfdcLoginUrl": "https://login.salesforce.com",
   "sourceApiVersion": "66.0",
   "packageAliases": {
-    "batch-framework-app": "0HoJv00000000eLKAQ",
-    "batch-framework-app@1.0.0-4": "04tJv000000bzirIAA"
+    "logging-utilities-core": "0HoJv00000000fxKAA",
+    "batch-template-core": "0HoJv00000000hZKAQ",
+    "logging-utilities-core@1.0.0-1": "04tJv000000c16LIAQ",
+    "batch-template-core@1.0.0-1": "04tJv000000c17xIAA"
   }
 }
