@@ -1,0 +1,62 @@
+<template>
+    <article class="slds-card">
+        <div class="slds-card__header slds-grid">
+            <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                <div class="slds-media__figure">
+                    <lightning-icon
+                        icon-name="standard:record_consent"
+                        size="small"
+                        alternative-text="Contact Point Type Consents"
+                    ></lightning-icon>
+                </div>
+                <div class="slds-media__body">
+                    <h2 class="slds-card__header-title">
+                        <span class="slds-truncate" title={title}>{title}</span>
+                    </h2>
+                </div>
+            </header>
+        </div>
+
+        <div class="slds-card__body slds-card__body_inner">
+            <template if:true={isLoading}>
+                <lightning-spinner size="small" alternative-text="Loading"></lightning-spinner>
+            </template>
+
+            <template if:true={errorMessage}>
+                <div class="slds-text-color_error slds-p-vertical_small">{errorMessage}</div>
+            </template>
+
+            <template if:true={showNoIndividualMessage}>
+                <div class="slds-text-color_weak slds-p-vertical_small">
+                    Aucun Individual n'est associé à ce compte.
+                </div>
+            </template>
+
+            <template if:true={showNoConsentMessage}>
+                <div class="slds-text-color_weak slds-p-vertical_small">
+                    Aucun Contact Point Type Consent trouvé pour cet Individual.
+                </div>
+            </template>
+
+            <template if:true={hasConsents}>
+                <div class="consent-list">
+                    <template for:each={consents} for:item="consent">
+                        <div key={consent.id} class="consent-item slds-p-around_small">
+                            <c-contact-point-type-consent-form consent={consent}></c-contact-point-type-consent-form>
+                        </div>
+                    </template>
+                </div>
+            </template>
+        </div>
+
+        <footer class="slds-card__footer">
+            <button
+                class="slds-button slds-button_reset slds-card__footer-action"
+                type="button"
+                onclick={handleViewAll}
+            >
+                {viewAllLabel}
+            </button>
+        </footer>
+    </article>
+</template>

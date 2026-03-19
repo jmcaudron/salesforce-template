@@ -1,0 +1,32 @@
+<template>
+    <div class="consent-form">
+        <div class="field-row slds-m-bottom_x-small">
+            <span class="field-label">{nameLabel} :</span>
+            <lightning-formatted-url
+                value={consent.recordUrl}
+                label={consent.name}
+                target="_self"
+            ></lightning-formatted-url>
+        </div>
+
+        <div class="field-row slds-m-bottom_x-small">
+            <span class="field-label">{activeLabel} :</span>
+            <lightning-input
+                type="checkbox"
+                checked={consent.active}
+                variant="label-hidden"
+                disabled
+            ></lightning-input>
+        </div>
+
+        <div class="field-row slds-m-bottom_x-small">
+            <span class="field-label">{dataUsePurposeLabel} :</span>
+            <span>{consent.dataUsePurpose}</span>
+        </div>
+
+        <div class="field-row">
+            <span class="field-label">{businessBrandLabel} :</span>
+            <span>{consent.businessBrand}</span>
+        </div>
+    </div>
+</template>

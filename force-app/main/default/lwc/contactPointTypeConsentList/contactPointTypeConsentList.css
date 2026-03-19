@@ -1,0 +1,15 @@
+.slds-card {
+    min-height: 16rem;
+}
+
+.consent-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.consent-item {
+    border: 1px solid var(--lwc-colorBorder);
+    border-radius: 0.25rem;
+    background: var(--lwc-colorBackgroundAlt);
+}
