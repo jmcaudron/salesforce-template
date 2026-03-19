@@ -1,0 +1,10 @@
+Hello,
+
+The execution of the batch class "{!Log__c.Process_Name__c}" you've asked just finished.
+
+This execution started on {!Log__c.Start_Date__c} and finished on {!Log__c.End_Date__c}.
+
+The query used to retrieve {!Log__c.Queried_Records_Number__c} records was :
+{! '\"' + Log__c.Query__c + '\"' }
+
+During this execution, {!Log__c.DML_Process_Number__c} records has been processed with {!Log__c.Success_Number__c} successes & {!Log__c.Error_Number__c} errors.

@@ -1,0 +1,5 @@
+SELECT Id, Status, JobType, ApexClass.Name, MethodName, CreatedDate, CompletedDate, NumberOfErrors, JobItemsProcessed, TotalJobItems
+FROM AsyncApexJob
+WHERE ApexClass.Name = 'MaintReqCurrentMonthBatch'
+ORDER BY CreatedDate DESC
+LIMIT 5

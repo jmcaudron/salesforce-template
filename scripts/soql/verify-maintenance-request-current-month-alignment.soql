@@ -1,0 +1,7 @@
+SELECT COUNT(Id) total,
+       CALENDAR_YEAR(Scheduled__c) scheduledYear,
+       CALENDAR_MONTH(Scheduled__c) scheduledMonth
+FROM Maintenance_Request__c
+WHERE Scheduled__c != null
+GROUP BY CALENDAR_YEAR(Scheduled__c), CALENDAR_MONTH(Scheduled__c)
+ORDER BY scheduledYear DESC, scheduledMonth DESC

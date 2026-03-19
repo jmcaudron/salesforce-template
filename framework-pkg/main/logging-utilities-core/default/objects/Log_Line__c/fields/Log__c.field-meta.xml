@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Log__c</fullName>
+    <description>The Log record this error is related to</description>
+    <externalId>false</externalId>
+    <label>Log</label>
+    <referenceTo>Log__c</referenceTo>
+    <relationshipLabel>Log lines</relationshipLabel>
+    <relationshipName>Log_lines</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>
